@@ -8,3 +8,13 @@ C:\Users\Alumno\Desktop\solucion parcial hepp\SimulacroParcial1Hepp\SimulacroPar
 C:\Users\Alumno\Desktop\solucion parcial hepp\SimulacroParcial1Hepp\SimulacroParcial1Hepp\bin\Debug\SimulacroParcial1Hepp.pdb
 C:\Users\Alumno\Desktop\solucion parcial hepp\SimulacroParcial1Hepp\SimulacroParcial1Hepp\obj\Debug\SimulacroParcial1Hepp.exe
 C:\Users\Alumno\Desktop\solucion parcial hepp\SimulacroParcial1Hepp\SimulacroParcial1Hepp\obj\Debug\SimulacroParcial1Hepp.pdb
+C:\PROG2\parcial2hepp\solucion parcial hepp\SimulacroParcial1Hepp\SimulacroParcial1Hepp\bin\Debug\SimulacroParcial1Hepp.exe.config
+C:\PROG2\parcial2hepp\solucion parcial hepp\SimulacroParcial1Hepp\SimulacroParcial1Hepp\bin\Debug\SimulacroParcial1Hepp.exe
+C:\PROG2\parcial2hepp\solucion parcial hepp\SimulacroParcial1Hepp\SimulacroParcial1Hepp\bin\Debug\SimulacroParcial1Hepp.pdb
+C:\PROG2\parcial2hepp\solucion parcial hepp\SimulacroParcial1Hepp\SimulacroParcial1Hepp\obj\Debug\SimulacroParcial1Hepp.csproj.AssemblyReference.cache
+C:\PROG2\parcial2hepp\solucion parcial hepp\SimulacroParcial1Hepp\SimulacroParcial1Hepp\obj\Debug\SimulacroParcial1Hepp.Form1.resources
+C:\PROG2\parcial2hepp\solucion parcial hepp\SimulacroParcial1Hepp\SimulacroParcial1Hepp\obj\Debug\SimulacroParcial1Hepp.Properties.Resources.resources
+C:\PROG2\parcial2hepp\solucion parcial hepp\SimulacroParcial1Hepp\SimulacroParcial1Hepp\obj\Debug\SimulacroParcial1Hepp.csproj.GenerateResource.cache
+C:\PROG2\parcial2hepp\solucion parcial hepp\SimulacroParcial1Hepp\SimulacroParcial1Hepp\obj\Debug\SimulacroParcial1Hepp.csproj.CoreCompileInputs.cache
+C:\PROG2\parcial2hepp\solucion parcial hepp\SimulacroParcial1Hepp\SimulacroParcial1Hepp\obj\Debug\SimulacroParcial1Hepp.exe
+C:\PROG2\parcial2hepp\solucion parcial hepp\SimulacroParcial1Hepp\SimulacroParcial1Hepp\obj\Debug\SimulacroParcial1Hepp.pdb

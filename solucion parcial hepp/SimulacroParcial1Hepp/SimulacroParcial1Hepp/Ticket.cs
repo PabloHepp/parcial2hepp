@@ -29,7 +29,7 @@ namespace SimulacroParcial1Hepp
 
         public override string ToString()
         {
-            return $"{nroOrden}";
+            return $"{VerNro()}";
         }
 
 

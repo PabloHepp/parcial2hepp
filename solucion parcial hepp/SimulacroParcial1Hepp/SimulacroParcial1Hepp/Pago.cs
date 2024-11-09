@@ -18,6 +18,11 @@ namespace SimulacroParcial1Hepp
             
         }
 
+        public int VerDni()
+        {
+            return ficha.VerDniTitular();
+        }
+
         public void AgregarCuenta (CuentaCorriente nueva)
         {
             ficha = nueva;
@@ -29,14 +34,7 @@ namespace SimulacroParcial1Hepp
 
         public override string ToString()
         {
-            return $"PAGO:;{base.ToString()};{ficha.VerTitular().DNI};{ficha.VerNroCuenta()}";
+            return $"PAGO:;{base.ToString()};{ficha.VerDniTitular()};{ficha.VerNroCuenta()}";
         }
-
-
-
     }
-
-    
-
-
 }

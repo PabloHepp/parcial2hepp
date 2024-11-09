@@ -40,8 +40,8 @@
             this.btnExportarTicket = new System.Windows.Forms.Button();
             this.btnImportarCuenta = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbCompras = new System.Windows.Forms.RadioButton();
             this.rbPagos = new System.Windows.Forms.RadioButton();
+            this.rbCompras = new System.Windows.Forms.RadioButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.groupBox1.SuspendLayout();
@@ -118,6 +118,7 @@
             this.btnAtender.TabIndex = 4;
             this.btnAtender.Text = "Atender";
             this.btnAtender.UseVisualStyleBackColor = true;
+            this.btnAtender.Click += new System.EventHandler(this.btnAtender_Click);
             // 
             // btnTicket
             // 
@@ -137,6 +138,7 @@
             this.btnExportarTicket.TabIndex = 4;
             this.btnExportarTicket.Text = "Exportar Ticket";
             this.btnExportarTicket.UseVisualStyleBackColor = true;
+            this.btnExportarTicket.Click += new System.EventHandler(this.btnExportarTicket_Click);
             // 
             // btnImportarCuenta
             // 
@@ -158,17 +160,6 @@
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             // 
-            // rbCompras
-            // 
-            this.rbCompras.AutoSize = true;
-            this.rbCompras.Location = new System.Drawing.Point(7, 9);
-            this.rbCompras.Name = "rbCompras";
-            this.rbCompras.Size = new System.Drawing.Size(66, 17);
-            this.rbCompras.TabIndex = 0;
-            this.rbCompras.TabStop = true;
-            this.rbCompras.Text = "Compras";
-            this.rbCompras.UseVisualStyleBackColor = true;
-            // 
             // rbPagos
             // 
             this.rbPagos.AutoSize = true;
@@ -179,6 +170,17 @@
             this.rbPagos.TabStop = true;
             this.rbPagos.Text = "Pagos";
             this.rbPagos.UseVisualStyleBackColor = true;
+            // 
+            // rbCompras
+            // 
+            this.rbCompras.AutoSize = true;
+            this.rbCompras.Location = new System.Drawing.Point(7, 9);
+            this.rbCompras.Name = "rbCompras";
+            this.rbCompras.Size = new System.Drawing.Size(66, 17);
+            this.rbCompras.TabIndex = 0;
+            this.rbCompras.TabStop = true;
+            this.rbCompras.Text = "Compras";
+            this.rbCompras.UseVisualStyleBackColor = true;
             // 
             // openFileDialog1
             // 

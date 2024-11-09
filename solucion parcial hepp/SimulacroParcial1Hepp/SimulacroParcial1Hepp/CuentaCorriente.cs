@@ -40,6 +40,11 @@ namespace SimulacroParcial1Hepp
             saldo = saldo + monto;
         }
 
+        public int VerDniTitular()
+        {
+            return titular.DNI;
+        }
+
         public double VerSaldo()
         {
             return saldo;

@@ -57,9 +57,6 @@ namespace SimulacroParcial1Hepp
 
         private void btnTicket_Click(object sender, EventArgs e)
         {
-            
-
-
 
         }
 
@@ -79,46 +76,11 @@ namespace SimulacroParcial1Hepp
             }
         }
 
-     
-
         private void btnExportarTickets_Click(object sender, EventArgs e)
         {
-            saveFileDialog1.Title = "Exportando Tickets";
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                string path = saveFileDialog1.FileName;
-
-                FileStream fs = null;
-                StreamWriter sw = null;
-                try
-                {
-                    fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write);
-
-                    sw = new StreamWriter(fs);
-
-                    string linea = "TIPO;NroTicket;DNI;NroCuenta";
-                   
-                    sw.WriteLine(linea);
-
-                    foreach (Ticket ticket in comercio.ListaAtendidos)
-                    {
-                        linea = ticket.ToString();
-                        sw.WriteLine(linea);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error al exportar");
-                }
-                finally
-                {
-                    if (sw != null) sw.Close();
-                    if (fs != null) fs.Close();
-                }
-            }
+            
         }
 
-     
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -133,10 +95,17 @@ namespace SimulacroParcial1Hepp
                 if (ckbCuenta.Checked)
                 {
                     int nroCta = Convert.ToInt32(txbCtacte.Text);
-
-                    nuevo = new Pago(nroCta);
-                    ((Pago)nuevo).AgregarCuenta(comercio.ConsultarCuenta(nroCta));
-                    comercio.AgregarTicket(nuevo);
+                    CuentaCorriente cuenta = comercio.ConsultarCuenta(nroCta);
+                    if (cuenta != null)
+                    {
+                        nuevo = new Pago(nroCta);
+                        ((Pago)nuevo).AgregarCuenta(cuenta);
+                        comercio.AgregarTicket(nuevo);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usted no posee Cuenta Corriente");
+                    }
                 }
                 else
                 {
@@ -146,7 +115,7 @@ namespace SimulacroParcial1Hepp
                 }
                 if (nuevo != null)
                 {
-                    lbxTurnos.Items.Add(nuevo.ToString());
+                    lbxTurnos.Items.Add($"{nuevo.VerNro()};{nuevo.VerFecha():dd/MM/yyyy/ HH:mm};{txbDNI.Text}");
                 }
             }
             catch { }
@@ -196,6 +165,64 @@ namespace SimulacroParcial1Hepp
                 finally
                 {
                     if (sr != null) sr.Close();
+                    if (fs != null) fs.Close();
+                }
+            }
+        }
+
+        private void btnAtender_Click(object sender, EventArgs e)
+        {
+            Ticket atendido = null;
+
+            if (rbPagos.Checked)
+                atendido = comercio.AtenderTicket(0);
+                
+
+            if (rbCompras.Checked)
+                atendido = comercio.AtenderTicket(1);
+
+            if (atendido != null)
+            {
+                lbxTurnos.Items.Remove(atendido);
+            }
+        }
+
+        private void btnExportarTicket_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.Title = "Exportando Tickets";
+            
+            saveFileDialog1.Filter = "Archivos .CSV | *.CSV";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string path = saveFileDialog1.FileName;
+
+                FileStream fs = null;
+                StreamWriter sw = null;
+                try
+                {
+                    fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write);
+
+                    sw = new StreamWriter(fs);
+
+                    string linea = "TIPO;NroTicket;DNI;NroCuenta";
+
+                    sw.WriteLine(linea);
+
+                    foreach (Ticket ticket in comercio.ListaAtendidos)
+                    {
+                        linea = ticket.ToString();
+                        //if(ticket is Pago)
+                        //{ linea = $"PAGO:{ticket.ToString()}";
+                        sw.WriteLine(linea);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error al exportar");
+                }
+                finally
+                {
+                    if (sw != null) sw.Close();
                     if (fs != null) fs.Close();
                 }
             }
